@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="header">
+                <h1 id="title">Signup</h1>
+                <div></div>
+            </div>
+            <form action="">
+                <div class="input-container" id="name-field">
+                    <input type="text" placeholder="Name" />
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="Email" />
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="Password" />
+                    <i class="fas fa-lock"></i>
+                </div>
+                <p class="form-text" id="form-text">Already have an Account click signin</p>
+                <div class="action-buttons">
+                    <button class="active-button" id="signup" type="button">
+                        Signup
+                    </button>
+                    <button id="signin" type="button">Signin</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        const signupBtn = document.getElementById("signup");
+        const signinBtn = document.getElementById("signin");
+        const nameField = document.getElementById("name-field");
+        const title = document.getElementById("title");
+        const formText = document.getElementById("form-text");
+
+        signinBtn.addEventListener("click", Signin);
+        signupBtn.addEventListener("click", Signup);
+
+        function Signup() {
+            nameField.style.height = "55px";
+            title.innerHTML = "SignUp";
+            formText.innerHTML = "Already have an Account click signin"
+            signupBtn.classList.add("active-button");
+            signinBtn.classList.remove("active-button");
+        }
+        function Signin() {
+            nameField.style.height = "0";
+            title.innerHTML = "Signin";
+            formText.innerHTML = "Don't have an account click signup";
+            signupBtn.classList.remove("active-button");
+            signinBtn.classList.add("active-button");
+        }
+    </script>
+</body>
+
+</html>
