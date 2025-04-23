@@ -73,7 +73,7 @@
   font-size: 0.85rem;
 }
 .form-text{
-  counter-reset: #333333;
+  color: #333333;
   font-size: 0.85rem;
   text-align: center;
 }
